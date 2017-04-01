@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <script type="text/javascript">
+	        
+			var images = ["IMG_0033.JPG", "IMG_0035.JPG", "IMG_0018.JPG"];
+			var count = 0;
+			var labelCount = 15;
+			var myChange = 0;
+			var myCountDown = 0;
+			
+			function changeAd()
+			{
+			      if (count == images.length)
+			        {
+			          count = 0;
+					}
+					
+				     
+				     document.getElementById("animation").src = "C:/Users/Anicet/Pictures/2015-11/" + images[count];
+					 count++;
+   				   		 
+			}
+			
+			 function startCountDown()
+			 {
+			     if (labelCount == 0)
+				 {
+				    window.location.href="cvr2.html";
+					clearInterval(myChange);
+					clearInterval(myCountDown);
+				 }
+				 
+				 else
+				 {
+			        document.getElementById("seconds").value = labelCount--;
+				 }
+			 }
+			
+			function startAdPage()
+			{
+			    myChange = setInterval("changeAd()", 5000);
+			    myCountDown = setInterval('startCountDown()', 1000);
+			}
+      </script>
+</head>
+<body onload="startAdPage()">
+     <table>
+              <tr>
+			       <td><img src="C:\\Users\Anicet\Pictures\2015-11\IMG_0018.JPG" id="animation" height="100px"; width="100px"></td>
+				   <td><p>Advertisement</p><br/>
+				       <p>The Central Valley Realtors homepage will be displayed in 5 seconds</p><br/>
+					   <p><a href="cvr2.html">Skip advertisement</a></p><br/>
+				   </td>
+			  </tr>
+     </table>
+	 <br/>
+	 <br/>
+	 <br/>
+	 <form action="">
+	 <label>Time in seconds:</label>&nbsp;&nbsp;<input type="text" id="seconds" text = 0/>
+	 </form>
+	 
+</body>
+
+
+</html>      
